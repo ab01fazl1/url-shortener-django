@@ -17,4 +17,6 @@ class RedirectShortURLView(generics.GenericAPIView):
     """
     def get(self, request, short_code):
         short_url = get_object_or_404(ShortURL, short_code=short_code)
+        short_url.clicks += 1
+        short_url.save()
         return redirect(short_url.original_url)
