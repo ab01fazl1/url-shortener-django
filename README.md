@@ -38,6 +38,24 @@ A simple URL shortener web application built with Django.
 
 5. Visit `http://localhost:8000` in your browser.
 
+##  Example Usage
+POST /shorten/
+```bash
+{
+  "original_url": "https://www.example.com"
+}
+```
+Response:
+
+```bash
+{
+  "id": 1,
+  "original_url": "https://www.example.com",
+  "short_code": "a1B2c3",
+  "created_at": "2025-05-27T12:34:56.789Z"
+}
+```
+
 ## License
 
 MIT License
